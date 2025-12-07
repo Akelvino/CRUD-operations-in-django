@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World!!!</h1>
-</body>
-</html>
+
+<div>
+    <a href="{% url 'add-employee' %}">Add Employee</a>
+</div>
+
+{% for employee in employees %}
+    <div>
+        <span><b>{{employee.id}}</b></span>
+        {{employee.employee_name}}
+    </div>
+{% endfor %}

@@ -6,3 +6,6 @@ def home(request):
     employees = Employee.objects.all()
     context = {'employees':employees}
     return render(request,'employee/home.html', context)
+
+def add_employee(request):
+    return render(request, 'employee/create_employee.html')
