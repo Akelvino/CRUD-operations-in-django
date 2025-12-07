@@ -1,11 +1,39 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th{
+        border: 1px solid black; 
+        padding: 5px;
+    }
+    td{
+         border: 1px solid black; 
+    }
+</style>
 
 <div>
     <a href="{% url 'add-employee' %}">Add Employee</a>
 </div>
 
-{% for employee in employees %}
-    <div>
-        <span><b>{{employee.id}}</b></span>
-        {{employee.employee_name}}
-    </div>
-{% endfor %}
+<table >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th></th>
+        <th></th>
+    </tr>
+        {% for employee in employees %}
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.employee_name}}</td>
+                <td>{{employee.employee_department}}</td>
+                <td><a href="#">Update</a></td>
+                <td><a href="#">Delete</a></td>
+            </tr>
+            
+        {% endfor %}
+    </tr>
+</table>
