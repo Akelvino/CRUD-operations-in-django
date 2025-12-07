@@ -3,7 +3,6 @@ from .models import Employee
 
 # Create your views here.
 def home(request):
-    employee = Employee.objects.all()
-    context = {'employee':employee}
-
+    employees = Employee.objects.all()
+    context = {'employees':employees}
     return render(request,'employee/home.html', context)
