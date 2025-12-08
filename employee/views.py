@@ -28,3 +28,8 @@ def edit_employee_details(request, pk):
             form.save()
             return redirect('home')
     return render(request, 'employee/edit.html',{'form':form})
+
+def deleteEmployrr(request, pk):
+    employees = Employee.objects.get(id=pk)
+    employees.delete()
+    return redirect('home')
