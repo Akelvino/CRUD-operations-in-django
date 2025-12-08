@@ -30,7 +30,7 @@
                 <td>{{employee.id}}</td>
                 <td>{{employee.employee_name}}</td>
                 <td>{{employee.employee_department}}</td>
-                <td><a href="#">Update</a></td>
+                <td><a href="{% url 'update-information' employee.id %}">Update</a></td>
                 <td><a href="#">Delete</a></td>
             </tr>
             

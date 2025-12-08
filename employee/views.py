@@ -16,3 +16,15 @@ def add_employee(request):
             form.save()
             return redirect('home')
     return render(request, 'employee/create_employee.html', {'form':form})
+
+
+def edit_employee_details(request, pk):
+    employees = Employee.objects.get(id=pk)
+    form = EmployeeCreationForm(instance=employees)
+
+    if request.method == 'POST':
+        form = EmployeeCreationForm(request.POST, instance=employees)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'employee/edit.html',{'form':form})
